@@ -1,6 +1,9 @@
 # AI Oracle Frame Template
 This is a template for building AI powered frame using [ORA's AI Oracle](https://docs.ora.io/doc/oao-onchain-ai-oracle/introduction).
 
+## DISCLAIMER
+> The purpose of this templte is to help people get started with AI dapps development. The codebase is NOT audited. Use it at your own risk.
+
 ## Template Structure
 **api** - defines api endpoints, which execute actions and return frame metatags
 

@@ -1,7 +1,7 @@
 import { getFrameMessage } from '@coinbase/onchainkit/frame';
 import { FrameRequest } from '@coinbase/onchainkit/frame';
 import { NextRequest, NextResponse } from 'next/server';
-import { CHAIN_ID, OAO_CONTRACT_ABI, OAO_CONTRACT_ADDRESS, RPC_URL } from '../../config';
+import { CHAIN_ID, PROMPT_CONTRACT_ABI, PROMPT_CONTRACT_ADDRESS, RPC_URL } from '../../config';
 import {Web3} from 'web3';
 import { allowedOrigin } from '../../lib/origin';
 import { kv } from "@vercel/kv";
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
   console.log("Json data: ", JSON.stringify(jsonData))
 
-  const contract = new web3.eth.Contract(OAO_CONTRACT_ABI, OAO_CONTRACT_ADDRESS);
+  const contract = new web3.eth.Contract(PROMPT_CONTRACT_ABI, PROMPT_CONTRACT_ADDRESS);
   const prompt = `OAO Prompt: ${jsonData.option}`;
   const model_id = 11 //https://docs.ora.io/doc/oao-onchain-ai-oracle/reference 
   const fee = Number(await contract.methods.estimateFee(model_id).call());
@@ -38,8 +38,8 @@ export async function POST(req: NextRequest) {
     chainId: `eip155:${CHAIN_ID}`,
     method: 'eth_sendTransaction',
     params: {
-      abi: OAO_CONTRACT_ABI,
-      to: OAO_CONTRACT_ADDRESS,
+      abi: PROMPT_CONTRACT_ABI,
+      to: PROMPT_CONTRACT_ADDRESS,
       data,
       value: fee.toString(),
     },

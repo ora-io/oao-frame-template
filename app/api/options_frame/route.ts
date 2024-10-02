@@ -37,6 +37,7 @@ export async function POST(req: NextRequest) {
 
   //store data to kv (redis) database for later use
   const fid = message?.interactor.fid || ""
+
   try {
     if(!fid){
       throw Error("Fid is undefined")
@@ -44,6 +45,7 @@ export async function POST(req: NextRequest) {
     await kv.set(fid.toString(), JSON.stringify(jsonData));
   } catch (error) {
     console.log("Error while storing to kv")
+    throw new Error("Error while storing to kv")
   }
 
   return new NextResponse(

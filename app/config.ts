@@ -5,8 +5,8 @@ export const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL
 export const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN
 export const RPC_URL = process.env.RPC_URL;
 
-export const OAO_CONTRACT_ABI = []
-export const OAO_CONTRACT_ADDRESS = "" 
+export const PROMPT_CONTRACT_ABI = []
+export const PROMPT_CONTRACT_ADDRESS = "" 
 export const CHAIN_ID = ""
 
 export const EXPLORERS = {
