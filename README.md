@@ -1,5 +1,5 @@
-# OAO Frame Template
-This is a template for building AI powered frame using [ORA's Onchain AI Oracle](https://docs.ora.io/doc/oao-onchain-ai-oracle/introduction).
+# AI Oracle Frame Template
+This is a template for building AI powered frame using [ORA's AI Oracle](https://docs.ora.io/doc/oao-onchain-ai-oracle/introduction).
 
 ## Template Structure
 **api** - defines api endpoints, which execute actions and return frame metatags
@@ -27,10 +27,10 @@ This is a template for building AI powered frame using [ORA's Onchain AI Oracle]
 2. cast a frame on Farcaster client (eg. [Warpcast](https://warpcast.com/)), using link to the production deployment
 
 ## Deploying contracts
-In order to develop and deploy contracts for your OAO Frame application, you can use this [template repository](https://github.com/ora-io/Interaction_With_OAO_Template).
+In order to develop and deploy contracts for your AI Oracle Frame application, you can use this [template repository](https://github.com/ora-io/Interaction_With_OAO_Template).
 
 
-## OAO Frame Examples
+## AI Oracle Frame Examples
 
 - [FortuneTeller](https://github.com/hadzija7/fortune-teller-frame)
 
